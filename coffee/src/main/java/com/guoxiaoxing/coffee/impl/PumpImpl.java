@@ -19,15 +19,17 @@ import javax.inject.Inject;
  */
 public class PumpImpl implements Pump {
 
-    private final Heater heater;
+    private final Heater mHeater;
 
     @Inject
     public PumpImpl(Heater heater) {
-        this.heater = heater;
+        mHeater = heater;
     }
 
     @Override
     public void pump() {
-
+        if (mHeater.isHot()) {
+            System.out.println("coffee maker is pumping");
+        }
     }
 }

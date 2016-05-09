@@ -34,13 +34,13 @@ public class CofferMaker {
      * (因为此时heater是Lazy<Heater>类型，因此要先调用get方法来获得Lazy<Heater>中封装的Heater对象，进而才能调用Heater
      * 对象的方法)。
      *
-     * @param mHeater Heater
-     * @param mPump   Pump
+     * @param heater Heater
+     * @param pump   Pump
      */
     @Inject
-    CofferMaker(Lazy<Heater> mHeater, Pump mPump) {
-        this.mHeater = mHeater;
-        this.mPump = mPump;
+    CofferMaker(Lazy<Heater> heater, Pump pump) {
+        mHeater = heater;
+        mPump = pump;
     }
 
     /**
