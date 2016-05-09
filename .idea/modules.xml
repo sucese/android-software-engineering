@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dagger/app.iml" filepath="$PROJECT_DIR$/dagger/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/coffee/coffee.iml" filepath="$PROJECT_DIR$/coffee/coffee.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger/dagger.iml" filepath="$PROJECT_DIR$/dagger/dagger.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dagger2-bset-pratice.iml" filepath="$PROJECT_DIR$/dagger2-bset-pratice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-dagger-bset-pratice.iml" filepath="$PROJECT_DIR$/google-dagger-bset-pratice.iml" />
     </modules>
   </component>
 </project>
