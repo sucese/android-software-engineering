@@ -3,7 +3,7 @@
 官方例子的场景描述：
 >一个泵压式咖啡机(CoffeeMaker)由两个主要零件组成，泵浦(Pump)和加热器(Heater)，咖啡机有一个功能是煮泡咖啡(brew)，当进行煮泡咖啡时，会按如下几个步骤进行打开加热器进行加热，泵浦加压，萃取出咖啡，然后关闭加热器，一杯咖啡就算制作完毕了。
 
-首先看一下工程结构，该工程针对官方例子做了改造，更加清晰明了，并添加类详细的注释。
+首先看一下工程结构，该工程针对[官方例子](https://github.com/google/dagger/tree/master/examples/simple/src/main/java/coffee)做了改造，更加清晰明了，并添加类详细的注释。
 
 ![](https://github.com/guoxiaoxing/google-dagger-bset-practice/blob/master/image/coffee-project.png)
 
