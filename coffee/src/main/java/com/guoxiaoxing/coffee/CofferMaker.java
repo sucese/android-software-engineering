@@ -28,7 +28,11 @@ public class CofferMaker {
     private final Pump mPump;
 
     /**
-     * CoffeeMaker对象依赖于Heater对象和Pump对象
+     * CoffeeMaker对象依赖于Heater对象和Pump对象，为构造器添加@Inject注解的方式，到时在创建CoffeeMaker对象的时候，
+     * Dagger2会自动调用这个带@Inject的构造器，同时根据@Module去获得需要传入构造器的Heater类型对象与Pump类型对象。
+     * 另外，这里对heater属性采用了“延迟加载”机制，即Heater类型对象的真正实例化是在第一次调用heater.get()方法的时候进行
+     * (因为此时heater是Lazy<Heater>类型，因此要先调用get方法来获得Lazy<Heater>中封装的Heater对象，进而才能调用Heater
+     * 对象的方法)。
      *
      * @param mHeater Heater
      * @param mPump   Pump

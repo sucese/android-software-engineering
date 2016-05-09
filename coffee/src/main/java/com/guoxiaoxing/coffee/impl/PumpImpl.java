@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * Email: guoxiaoxingv@163.com
  * Site:  https://github.com/guoxiaoxing
  * Date: 16/5/9 上午10:43
- * Function:
+ * Function:泵浦，Pump的实现类
  * <p/>
  * Modification history:
  * Date                 Author              Version             Description

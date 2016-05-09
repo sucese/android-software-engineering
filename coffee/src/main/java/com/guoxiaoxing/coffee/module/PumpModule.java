@@ -22,6 +22,9 @@ import dagger.Provides;
 public class PumpModule {
     @Provides
     Pump providePump(PumpImpl pump) {
+        // providePump方法在提供Pump类型对象的时候，是把方法的形参作为返回值返回的，为了保证Dagger在创
+        // 建CoffeeMaker对象的时候，可以自动装配pump属性，因此必须要为PumpImpl类的构造器添加@Inject
+        // 注解，没有@Inject注解的类，Dagger2是不认识的，更无法自动进行构造器的调用创建实例。
         return pump;
     }
 }  
