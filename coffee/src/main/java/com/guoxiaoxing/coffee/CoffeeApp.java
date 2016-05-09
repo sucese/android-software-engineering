@@ -21,6 +21,9 @@ import dagger.Component;
 
 public class CoffeeApp {
 
+
+    // 创建一个@Commpoment接口，通过接口中的一个无参数方法来“驱使”Dagger2来创建出一
+    // 个CoffeeMaker对象，并且随着这个对象的建立，CoffeeMaker中所有依赖对象都装配好
     @Singleton
     @Component(modules = {HeaterModule.class})
     public interface Coffee {
@@ -28,6 +31,8 @@ public class CoffeeApp {
     }
 
     public static void main(String[] args) {
+        Coffee coffee = DaggerCoffeeApp_Coffee.builder().build();
+        coffee.maker().brew();
     }
 }
 
