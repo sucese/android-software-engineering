@@ -9,12 +9,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/coffee" />
             <option value="$PROJECT_DIR$/dagger" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/coffee" />
             <option value="$PROJECT_DIR$/dagger" />
           </set>
         </option>

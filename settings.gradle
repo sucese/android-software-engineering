@@ -1,1 +1,1 @@
-include ':dagger'
+include ':dagger', ':coffee'
