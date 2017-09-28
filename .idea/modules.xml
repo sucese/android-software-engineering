@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/coffee/coffee.iml" filepath="$PROJECT_DIR$/coffee/coffee.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger/dagger.iml" filepath="$PROJECT_DIR$/dagger/dagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/google-dagger-bset-practice.iml" filepath="$PROJECT_DIR$/google-dagger-bset-practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/software-engineering.iml" filepath="$PROJECT_DIR$/software-engineering.iml" />
     </modules>
   </component>
 </project>
