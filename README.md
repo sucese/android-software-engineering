@@ -1,11 +1,10 @@
 # 大型Android项目的工程化之路
 
-<img src="https://github.com/guoxiaoxing/software-engineering/raw/master/art/project_logo.png"/>
+## 功能介绍
 
-**关于作者**
-
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
-
+[![License](https://img.shields.io/github/license/guoxiaoxing/software-engineering.svg)](https://jitpack.io/#guoxiaoxing/software-engineering) 
+[![Stars](https://img.shields.io/github/stars/guoxiaoxing/software-engineering.svg)](https://jitpack.io/#guoxiaoxing/software-engineering) 
+[![Forks](https://img.shields.io/github/forks/guoxiaoxing/software-engineering.svg)](https://jitpack.io/#guoxiaoxing/software-engineering) 
 
 - 大型Android项目的工程化之路：项目架构
 - 大型Android项目的工程化之路：模块化
