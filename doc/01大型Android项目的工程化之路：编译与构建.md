@@ -346,7 +346,7 @@ android {
 
 我们可以在项目里的proguard-rules.pro定义我们的混淆规则，常用的第三方库混淆规则如下所示：
 
-```
+```java
 #如果有引用v4包可以添加下面这行  
 -keep class android.support.v4.** { *; }  
 -keep public class * extends android.support.v4.**  
