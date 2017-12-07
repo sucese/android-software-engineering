@@ -363,112 +363,84 @@ android {
 提示：要想做进一步的代码压缩，请尝试使用位于同一位置的 proguard-android-optimize.txt 文件。它包括相同的 ProGuard 规则，但还包括其他在字节码一级（方法内和方法间）执行分析的优化，以进一步减小 APK 大小和帮助提高其运行速度。
 - proguard-rules.pro 文件用于添加自定义 ProGuard 规则。默认情况下，该文件位于模块根目录（build.gradle 文件旁）。
 
-我们可以在项目里的proguard-rules.pro定义我们的混淆规则，常用的第三方库混淆规则如下所示：
+我们可以在项目里的proguard-rules.pro定义我们的混淆规则，
 
-```java
-#如果有引用v4包可以添加下面这行  
--keep class android.support.v4.** { *; }  
--keep public class * extends android.support.v4.**  
--keep public class * extends android.support.v4.**
--keep public class * extends android.app.Fragment  
+常用的混淆命令如下所示：
 
+proguard 参数
 
-#如果引用了v4或者v7包，可以忽略警告，因为用不到android.support  
--dontwarn android.support.**  
+- -include {filename}    从给定的文件中读取配置参数 
 
+- -basedirectory {directoryname}    指定基础目录为以后相对的档案名称 
 
-#保持自定义组件不被混淆  
--keep public class * extends android.view.View {  
-    public <init>(android.content.Context);  
-    public <init>(android.content.Context, android.util.AttributeSet);  
-    public <init>(android.content.Context, android.util.AttributeSet, int);  
-    public void set*(...);  
-}  
+- -injars {class_path}    指定要处理的应用程序jar,war,ear和目录 
 
+- -outjars {class_path}    指定处理完后要输出的jar,war,ear和目录的名称 
 
-#保持 Serializable 不被混淆  
--keepnames class * implements java.io.Serializable  
+- -libraryjars {classpath}    指定要处理的应用程序jar,war,ear和目录所需要的程序库文件 
 
-#保持 Serializable 不被混淆并且enum 类也不被混淆  
--keepclassmembers class * implements java.io.Serializable {  
-    static final long serialVersionUID;  
-    private static final java.io.ObjectStreamField[] serialPersistentFields;  
-    private void writeObject(java.io.ObjectOutputStream);  
-    private void readObject(java.io.ObjectInputStream);  
-    java.lang.Object writeReplace();  
-    java.lang.Object readResolve();  
-}  
+- -dontskipnonpubliclibraryclasses    指定不去忽略非公共的库类。 
 
-#保持枚举 enum 类不被混淆 如果混淆报错，建议直接使用上面的 -keepclassmembers class * implements java.io.Serializable即可  
--keepclassmembers enum * {  
-  public static **[] values();  
- public static ** valueOf(java.lang.String);  
-}  
+- -dontskipnonpubliclibraryclassmembers    指定不去忽略包可见的库类的成员。 
 
--keepclassmembers class * {  
-    public void *ButtonClicked(android.view.View);  
-}  
+保留选项 
 
-#不混淆资源类  
-#-keepclassmembers class **.R$* {  
-#    public static <fields>;  
-#}  
+- -keep {Modifier} {class_specification}    保护指定的类文件和类的成员 
 
+- -keepclassmembers {modifier} {class_specification}    保护指定类的成员，如果此类受到保护他们会保护的更好
 
-#xUtils(保持注解，及使用注解的Activity不被混淆，不然会影响Activity中你使用注解相关的代码无法使用)   
--keep class * extends java.lang.annotation.Annotation {*;}  
--keep class com.otb.designerassist.activity.** {*;}  
+- -keepclasseswithmembers {class_specification}    保护指定的类和类的成员，但条件是所有指定的类和类成员是要存在。 
 
+- -keepnames {class_specification}    保护指定的类和类的成员的名称（如果他们不会压缩步骤中删除） 
 
-#自己项目特殊处理代码（这些地方我使用了Gson类库和注解，所以不希望被混淆，以免影响程序）  
--keep class com.otb.designerassist.entity.** {*;}  
--keep class com.otb.designerassist.http.rspdata.** {*;}  
--keep class com.otb.designerassist.service.** {*;}  
+- -keepclassmembernames {class_specification}    保护指定的类的成员的名称（如果他们不会压缩步骤中删除） 
 
+- -keepclasseswithmembernames {class_specification}    保护指定的类和类的成员的名称，如果所有指定的类成员出席（在压缩步骤之后） 
 
-##混淆保护自己项目的部分代码以及引用的第三方jar包library（想混淆去掉"#"）  
-#-libraryjars libs/umeng-analytics-v5.2.4.jar  
-#-libraryjars libs/alipaysecsdk.jar  
-#-libraryjars libs/alipayutdid.jar  
-#-libraryjars libs/weibosdkcore.jar   
+- -printseeds {filename}    列出类和类的成员- -keep选项的清单，标准输出到给定的文件 
 
+压缩 
 
-# 以libaray的形式引用的图片加载框架,不想混淆（注意，此处不是jar包形式，想混淆去掉"#"）  
-#-keep class com.nostra13.universalimageloader.** { *; }  
+- -dontshrink    不压缩输入的类文件 
 
+- -printusage {filename} 
 
-###-------- Gson 相关的混淆配置--------  
--keepattributes Signature  
--keepattributes *Annotation*  
--keep class sun.misc.Unsafe { *; }  
+- -whyareyoukeeping {class_specification}    
 
+优化 
 
+- -dontoptimize    不优化输入的类文件 
 
+- -assumenosideeffects {class_specification}    优化时假设指定的方法，没有任何副作用 
 
-###-------- pulltorefresh 相关的混淆配置---------  
--dontwarn com.handmark.pulltorefresh.library.**  
--keep class com.handmark.pulltorefresh.library.** { *;}  
--dontwarn com.handmark.pulltorefresh.library.extras.**  
--keep class com.handmark.pulltorefresh.library.extras.** { *;}  
--dontwarn com.handmark.pulltorefresh.library.internal.**  
--keep class com.handmark.pulltorefresh.library.internal.** { *;}  
+- -allowaccessmodification    优化时允许访问并修改有修饰符的类和类的成员 
 
+混淆 
 
-###---------  reservoir 相关的混淆配置-------  
--keep class com.anupcowkur.reservoir.** { *;}  
+- -dontobfuscate    不混淆输入的类文件 
 
+- -printmapping {filename} 
 
-###-------- ShareSDK 相关的混淆配置---------  
--keep class cn.sharesdk.** { *; }  
--keep class com.sina.sso.** { *; }  
+- -applymapping {filename}    重用映射增加混淆 
 
+- -obfuscationdictionary {filename}    使用给定文件中的关键字作为要混淆方法的名称 
 
-###--------------umeng 相关的混淆配置-----------  
--keep class com.umeng.** { *; }  
--keep class com.umeng.analytics.** { *; }  
--keep class com.umeng.common.** { *; }  
--keep class com.umeng.newxp.** { *; }  
-```
+- -overloadaggressively    混淆时应用侵入式重载 
+
+- -useuniqueclassmembernames    确定统一的混淆类的成员名称来增加混淆 
+
+- -flattenpackagehierarchy {package_name}    重新包装所有重命名的包并放在给定的单一包中 
+
+- -repackageclass {package_name}    重新包装所有重命名的类文件中放在给定的单一包中 
+
+- -dontusemixedcaseclassnames    混淆时不会产生形形色色的类名 
+
+- -keepattributes {attribute_name,...}    保护给定的可选属性，例如LineNumberTable, LocalVariableTable, SourceFile, Deprecated, Synthetic, Signature, and InnerClasses. 
+
+- -renamesourcefileattribute {string}    设置源文件中给定的字符串常量
+
+另外关于具体的混淆规则，可以利用Android Stduio插件[AndroidProguardPlugin](https://github.com/zhonghanwen/AndroidProguardPlugin)，它帮我们收集了主要第三方库的混淆规则，可以
+参考下。
 
 每次构建时 ProGuard 都会输出下列文件：
 
