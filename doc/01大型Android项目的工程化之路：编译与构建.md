@@ -315,7 +315,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
 
 我们通常关心的是distributionUrl，它用来配置Gradle的版本，它会去该路径下载相应的Gradle包。
 
-注：如果官方的gradle地址下载比较慢，可以去国内的镜像地址http://mirrors.flysnow.org下载。
+注：如果官方的gradle地址下载比较慢，可以去[国内的镜像地址](http://mirrors.flysnow.org)下载。
 
 ## 三 Gradle混淆与优化
 
