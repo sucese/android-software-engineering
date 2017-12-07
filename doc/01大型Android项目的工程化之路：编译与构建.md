@@ -8,10 +8,17 @@
 
 - 一 Groovy语言基础
 - 二 Gradle脚本构建
+    - 2.1 root build.gradle
+    - 2.2 module build.gradle
+    - 2.1 gradle wrapper
 - 三 Gradle混淆与优化
+    - 2.1 代码压缩
+    - 2.2 资源压缩
 - 四 Gradle多项目构建
 - 五 Gradle多渠道打包
-- 六 Gradle测试
+- 附录
+    - Gradle常用命令
+    - Gradle小技巧
 
 本篇文章是《大型Android项目的工程化之路》的开篇之作，用来讨论Android项目架构的最佳实践。
 
@@ -90,7 +97,53 @@ def  callMethod(){
 
 >root build.gradle是根目录的build.gradle文件，它主要用来对整体工程以及各个Module进行一些通用的配置。
 
-### module build.gradle
+```java
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        //远程仓库
+        google()
+        jcenter()
+    }
+    dependencies {
+        //Android Studio Gradle插件
+        classpath 'com.android.tools.build:gradle:3.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+//对所有工程进行遍历和配置
+allprojects {
+    repositories {
+        //远程仓库
+        jcenter()
+        google()
+    }
+}
+
+//对单个工程进行遍历和配置
+subprojects{
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext{
+    //定义module通用的版本号，这样module里就可以通过$rootProject.ext.supportLibraryVersion
+    //的方式访问
+    supportLibraryVersion = '26.0.0'
+}
+```
+
+### 2.2 module build.gradle
+
+>module build.gradle用于module的配置与编译。
 
 这里有很多常用的配置选项，你并不需要都把它们记住，有个大致的印象就行，等到用的时候再回来查一查。
 
@@ -240,7 +293,7 @@ dependencies {
 }
 ```
 
-### Gradle Wrapper
+### 2.3 Gradle Wrapper
 
 Gradle Wrapper是对Gradle的一层包装，目的在于团队开发中统一Gradle版本，一般可以通过gradle wrapper命令构建，会生成以下文件：
 
@@ -261,15 +314,6 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
 我们通常关心的是distributionUrl，它用来配置Gradle的版本，它会去该路径下载相应的Gradle包。
 
 注：如果官方的gradle地址下载比较慢，可以去国内的镜像地址http://mirrors.flysnow.org/下载。
-
-### settings.gradle
-
-include表示工程在构建时将demo包含进去，我们还可以自定义demo所在目录，如果没有指定，默认指定当前根目录。
-
-```java
-include ':demo'
-project(':demo').projectDir = new File('your demo path')
-```
 
 ## 三 Gradle混淆与优化
 
@@ -654,7 +698,7 @@ android {
 
 ## 附录
 
-### 常用的Gradle命令
+### Gradle常用命令
 
 强制刷新依赖
 

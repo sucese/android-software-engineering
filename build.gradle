@@ -2,6 +2,7 @@
 
 buildscript {
     repositories {
+        //远程仓库
         google()
         jcenter()
     }
@@ -17,6 +18,7 @@ buildscript {
 //对所有工程进行遍历和配置
 allprojects {
     repositories {
+        //远程仓库
         jcenter()
         google()
     }
