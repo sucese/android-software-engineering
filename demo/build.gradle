@@ -6,24 +6,129 @@ android {
 
 
     defaultConfig {
+        //应用包名
         applicationId "com.guoxiaoxing.software.engineering.demo"
+        //最低支持的Android SDK 版本
         minSdkVersion 15
+        //基于开发的Android SDK版本
         targetSdkVersion 26
+        //应用版本号
         versionCode 1
+        //应用版本名称
         versionName "1.0"
 
+        //单元测试时使用的Runner
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
+
+    signingConfigs{
+
+        debug{
+            storeFile file("debugKey.keystore")
+            storePassword '123456'
+            keyAlias 'debugkeyAlias'
+            keyPassword '123456'
+        }
+
+        release{
+            storeFile file("releaseKey.keystore")
+            storePassword '123456'
+            keyAlias 'releasekeyAlias'
+            keyPassword '123456'
+        }
+    }
+
+    //Java编译选项
+    compileOptions{
+
+        //编码
+        encoding = 'utf-8'
+
+        //Java编译级别
+        sourceCompatibility = JavaVersion.VERSION_1_6
+
+        //生成的Java字节码版本
+        targetCompatibility = JavaVersion.VERSION_1_6
+    }
+
+    //ADE配置选项
+    adbOptions{
+
+        //ADB命令执行的超时时间，超时时会返回CommandRectException异常。
+        timeOutInMs = 5 * 1000//5秒
+
+        //ADB安装选项，例如-r代表替换安装
+        installOptions '-r', '-s'
+    }
+
+    //DEX配置选项
+    dexOptions{
+
+        //是否启动DEX增量模式，可以加快速度，但是目前这个特性不是很稳定
+        incremental false
+
+        //执行DX命令是为其分配的最大堆内存，主要用来解决执行DX命令是内存不足的情况
+        javaMaxHeapSize '4g'
+
+        //执行DX开启的线程数，适当的线程数量可以提高编译速度
+        threadCount 2
+
+        //是否开启jumbo模式，有时方法数超过了65525，需要开启次模式才能编译成功
+        jumboMode true
+    }
+
+    lintOptions{
+
+        //lint发现错误时是否退出Gradle构建
+        abortOnError false
+    }
+
+    //构建的应用类型。用于指定生成的APK相关属性
     buildTypes {
+
+        debug{
+
+            //是否可调试
+            debuggable true
+
+            //是否可调试jni
+            jniDebuggable true
+
+            //是否启动自动拆分多个DEx
+            multiDexEnabled true
+
+            //是否开启APK优化，zipAlign是Android提供的一个整理优化APK文件的
+            //工具，它可以提高系统和应用的运行效率，更快的读写APK里面的资源，降低
+            //内存的优化
+            zipAlignEnabled true
+
+            //签名信息
+            signingConfig signingConfigs.debug
+
+            //是否自动清理未使用的资源
+            shrinkResources true
+
+            //是否启用混淆
+            minifyEnabled true
+
+            //指定多个混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
         release {
-            minifyEnabled false
+            //签名信息
+            signingConfig signingConfigs.release
+
+            //是否启用混淆
+            minifyEnabled true
+
+            //指定多个混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
-def version = '26.0.0'
+def supportLibraryVersion = '26.0.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -33,7 +138,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile "com.android.support:appcompat-v7:$version"
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
