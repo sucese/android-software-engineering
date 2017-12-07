@@ -13,12 +13,24 @@ buildscript {
     }
 }
 
+//对所有工程进行遍历和配置
 allprojects {
     repositories {
         jcenter()
+        google()
     }
+}
+
+//对单个工程进行遍历和配置
+subprojects{
+
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+ext{
+    version = '1.0.0'
 }
