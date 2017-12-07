@@ -284,8 +284,7 @@ android {
     }
 }
 
-def supportLibraryVersion = '26.0.0'
-
+//依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -293,9 +292,6 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 ```
 
