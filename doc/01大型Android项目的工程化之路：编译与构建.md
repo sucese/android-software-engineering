@@ -25,7 +25,7 @@
 >[Gradle](https://zh.wikipedia.org/wiki/Gradle)是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。它使用一种基于Groovy的特定领域语言来声明项目设置，大部分功能都通过
 插件的方式实现。
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/gradle/gradle-org-hero.png"/>
+<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/gradle/gradle_org_hero.png"/>
 
 官方网站：https://gradle.org/
 
