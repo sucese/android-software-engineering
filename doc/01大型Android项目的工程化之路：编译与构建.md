@@ -84,6 +84,8 @@ def  callMethod(){
 
 一个标准的Android Gradle工程如下所示，我们分别来看看里面每个文件的作用。
 
+<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/gradle/gradle_project.png"/>
+
 ### 2.1 root build.gradle
 
 >root build.gradle是根目录的build.gradle文件，它主要用来对整体工程以及各个Module进行一些通用的配置。
