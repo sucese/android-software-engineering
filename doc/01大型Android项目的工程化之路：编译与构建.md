@@ -439,16 +439,16 @@ proguard 参数
 
 - -renamesourcefileattribute {string}    设置源文件中给定的字符串常量
 
-另外关于具体的混淆规则，可以利用Android Stduio插件[AndroidProguardPlugin](https://github.com/zhonghanwen/AndroidProguardPlugin)，它帮我们收集了主要第三方库的混淆规则，可以
+另外关于具体的混淆规则，可以使用Android Stduio插件[AndroidProguardPlugin](https://github.com/zhonghanwen/AndroidProguardPlugin)，它帮我们收集了主要第三方库的混淆规则，可以
 参考下。
 
-每次构建时 ProGuard 都会输出下列文件：
+混淆完成后都会输出下列文件：
 
 - dump.txt：说明 APK 中所有类文件的内部结构。
 - mapping.txt：提供原始与混淆过的类、方法和字段名称之间的转换。
 - seeds.txt：列出未进行混淆的类和成员。
 - usage.txt：列出从 APK 移除的代码。
-
+t
 这些文件保存在 <module-name>/build/outputs/mapping/release/ 中，这些文件是很有用的，我们还可以利用在SDK的安装目录下\tools\proguard\lib的proguardgui程序再结合
 mapping.txt对APK进行反混淆，以及利用etrace 脚本解码混淆过后的应用程序堆栈信息，这通常是用来来分析混淆后的线上应用的bug。
 
@@ -460,7 +460,7 @@ retrace 脚本（在 Windows 上为 retrace.bat；在 Mac/Linux 上为 retrace.s
 retrace.sh -verbose mapping.txt obfuscated_trace.txt
 ```
 
-另外，还要提一点，如果想要混淆支持Instance Run，可以使用Android内置的代码压缩器，Android内置的代码压缩器也可以使用 与 ProGuard 相同的配置文件来配置 Android 插件压缩器。
+另外，还要提一点，如果想要混淆支持Instant Run，可以使用Android内置的代码压缩器，Android内置的代码压缩器也可以使用 与 ProGuard 相同的配置文件来配置 Android 插件压缩器。
 但是，Android 插件压缩器不会对您的代码进行混淆处理或优化，它只会删除未使用的代码。因此，它应该仅将其用于调试构建，并为发布构建启用 ProGuard，以便对发布 APK 的代码进行混淆
 处理和优化。
                                                   
@@ -538,7 +538,7 @@ android {
 }
 ```
 
-## Gradle多项目构建
+## 四 Gradle多项目构建
 
 Android的项目一般分为应用项目、库项目和测试项目，它们对应的Gradle插件类型分别为：
 
@@ -597,7 +597,7 @@ allprojects {
 另外，如果我们想把自己的项目提交到jcenter上，可以使用[bintray-release](https://github.com/novoda/bintray-release)，具体使用方式很简单，项目文档上说的也很清楚，这里就
 不再赘述。
 
-## Gradle多渠道打包
+## 五 Gradle多渠道打包
 
 根据发布的渠道或者客户群的不同，同一个应用可能会有很多变体，不同变体的应用名字、渠道等很多信息都会不一样，这个时候就要使用Gradle多渠道打包。
 多渠道打包主要是通过productFlavor进行定制。
