@@ -26,4 +26,6 @@
 
 大风车：http://dafengche.souche.com/
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/gradle/dafengche_banner.png" width="600"/>
+> 一款SaaS产品，提供建站系统、ERP、CRM、微信营销系统、财务系统等解决方案，旨在帮助车商及4S集团提升运营和管理水平。
+
+<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/module/dafengche_banner.png" width="600"/>
