@@ -10,15 +10,15 @@
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android工程化实践：工程化实践概述](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：工程化实践概述.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：SDK设计](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：SDK设计.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：Gradle编译系统](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：Gradle编译系统.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：插件化](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：插件化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：热修复](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：热修复.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：模块化](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：模块化.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：VCS工作流](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：VCS工作流.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：持续集成](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：持续集成.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：编码规范](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：编码规范.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：自动化测试](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：自动化测试.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：日志系统](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：日志系统.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：埋点与数据采集](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：标准文档.md.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：工程化实践概述](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：工程化实践概述.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：SDK设计](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：SDK设计.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：Gradle编译系统](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：Gradle编译系统.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：插件化](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：插件化.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：热修复](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：热修复.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：模块化](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：模块化.md)| 已完成| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：VCS工作流](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：VCS工作流.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：持续集成](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：持续集成.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：编码规范](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：编码规范.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：自动化测试](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：自动化测试.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：日志系统](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：日志系统.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：埋点与数据采集](https://github.com/guoxiaoxing/android-software-engineering/blob/master/doc/Android工程化实践：标准文档.md.md)| 编辑中| [](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
